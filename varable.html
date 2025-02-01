@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VARIABLE</title>
+        <style>
+            .but{
+                background-color: darkviolet;
+                color:white;
+                padding: 10px 20px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <button class='but' onclick="fun()">ADD TO CART</button>
+        <button class="but" onclick="alert('Cart Reseted Successfully!');reset();">RESET CART</button>
+        <button class="but" onclick="show()"> Show cart in console</button>
+        <p>Number of Items in Cart : <span id="123">0</span></p>
+
+        
+    <script>
+        let cart_no =0;
+        function fun(){
+            cart_no=cart_no+1;
+            document.getElementById('123').innerHTML =cart_no;
+        }    
+        function reset(){
+            //cart_no=0;
+            document.getElementById('123').innerHTML =cart_no=0;
+            
+        }    
+        function show(){
+            console.log("Number of Items in Cart : ",cart_no);
+        }
+    </script>    
+    </body>
+</html>
