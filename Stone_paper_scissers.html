@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STONE ,PAPER  AND SICCERS </title>
+        <style>
+            .N123{
+                background-color: darkviolet;
+                color:white;
+                padding: 10px 20px;
+                size: 100px;
+                border-radius: 10px;
+            }
+            body{
+                background-color: rgb(34, 114, 141);
+            }
+            .C{
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                letter-spacing: 10px;
+                margin-left: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="margin-left: 500px;">STONE ,PAPER  AND SICCERS</h2>
+        <dev class="C">
+        
+        <button class="N123" onclick="f1()">STONE</button>
+        <button class="N123" onclick="f2()">PAPER</button>
+        <button class="N123" onclick="f3()">SICCERS</button>
+        </dev>
+
+    <script>
+        let autogen;
+
+        function f1(){
+            user='STONE';
+            const random = Math.random();
+            if (random<(1/3)){
+                autogen ='STONE';
+                alert("STONE(user) with STONE(autogen) : DRAW");
+            }else if(random<(2/3)){
+                autogen ='PAPER';
+                alert("STONE(user) with PAPER(autogen) : LOOSE");
+            }else{
+                autogen ='SICCERS';
+                alert("STONE(user) with SICCERS(autogen) : WIN");
+            }
+            console.log("autogen :",autogen);
+        }
+        function f2(){
+            user='PAPER';
+            const random = Math.random();
+            if (random<(1/3)){
+                autogen ='STONE';
+                alert("PAPER(user) with STONE(autogen) : WIN");
+            }else if(random<(2/3)){
+                autogen ='PAPER';
+                alert("PAPER(user) with PAPER(autogen) : DRAW");
+            }else{
+                autogen ='SICCERS';
+                alert("PAPER(user) with SICCERS(autogen) : LOOSE");
+            }
+            console.log("autogen :",autogen);
+        }
+        function f3(){
+            user='SICCERS';
+            const random = Math.random();
+            if (random<(1/3)){
+                autogen ='STONE';
+                alert("SICCERS(user) with STONE(autogen) : LOOSE");
+            }else if(random<(2/3)){
+                autogen ='PAPER';
+                alert("SICCERS(user) with PAPER(autogen) : WIN");
+            }else{
+                autogen ='SICCERS';
+                alert("SICCERS(user) with SICCERS(autogen) : DRAW");
+            }
+            console.log("autogen :",autogen);
+        }
+
+    </script>    
+    </body>
+
+</html>
