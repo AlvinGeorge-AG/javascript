@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STONE ,PAPER  AND SICCERS </title>
+        <style>
+            .N123{
+                background-color: darkviolet;
+                color:white;
+                padding: 10px 20px;
+                size: 100px;
+                border-radius: 10px;
+            }
+            body{
+                background-color: rgb(34, 114, 141);
+            }
+            .C{
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                letter-spacing: 10px;
+                margin-left: 900px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="margin-left: 900px;">STONE  PAPER  AND SICCERS</h2>
+        <h3 style="margin-left: 950px;">YOU HAVE 10 CHANCES !</h3>
+        <dev class="C">
+        <button class="N123" onclick="f1('STONE')">STONE</button>
+        <button class="N123" onclick="f1('PAPER')">PAPER</button>
+        <button class="N123" onclick="f1('SCICCERS')">SICCERS</button>
+        <h3 style="margin-left: 1000px;letter-spacing: 0.01cm;">CURRENT SCORE :<span id="SCO">0</span></h3>
+        <h3 style="margin-left: 950px; word-spacing:.1cm; letter-spacing: 0.01cm;">LAST HIGH SCORE :<span id="T">0</span></h3>
+        </dev>
+
+    <script>
+        let autogen;
+        let chance=0; //how many times you played
+        let score=0;  //variable to store score
+        const lasthighscore ={LHS:score}; //object to store last high score
+        console.log(localStorage.getItem('lastscore'));
+        document.getElementById('T').innerHTML=(JSON.parse(localStorage.getItem('lastscore'))).LHS;
+        //lasthighscore.LHS=score;
+
+
+        function f1(user)  //main function
+        {   
+            chance++;                                                          
+            //auto generates a choice 
+            const random = Math.random();
+            if (random<(1/3)){
+                autogen ='STONE';
+            }else if(random<(2/3)){
+                autogen ='PAPER';
+            }else{
+                autogen ='SICCERS';
+            }
+            console.log("autogen :",autogen);
+
+
+            if (user==='STONE')
+            {
+                if (autogen==='STONE'){
+                    alert("STONE(user) with STONE(autogen) : DRAW");
+                }else if(autogen==='PAPER'){
+                    alert("STONE(user) with PAPER(autogen) : LOOSE");
+                }else{
+                    alert("STONE(user) with SICCERS(autogen) : WIN");
+                    score++;
+
+                }
+            }
+            if (user==='PAPER')
+            {
+                if (autogen==='STONE'){
+                    alert("PAPER(user) with STONE(autogen) : WIN");
+                    score++;
+                }else if(autogen==='PAPER'){
+                    alert("PAPER(user) with PAPER(autogen) : DRAW");
+                }else{
+                    alert("PAPER(user) with SICCERS(autogen) : LOOSE");
+                }
+            }
+            if (user==='SCICCERS')
+            {
+                if (autogen==='STONE'){
+                    alert("SICCERS(user) with STONE(autogen) : LOOSE");
+                }else if(autogen==='PAPER'){
+                    alert("SICCERS(user) with PAPER(autogen) : WIN");
+                    score++;
+                }else{
+                    alert("SICCERS(user) with SICCERS(autogen) : DRAW");
+                }
+            }  
+            localStorage.setItem('lastscore',JSON.stringify(lasthighscore));
+            document.getElementById("SCO").innerHTML=score; //display score on screen
+            if (score>lasthighscore.LHS)
+            {   
+                lasthighscore.LHS=score;
+                document.getElementById('T').innerHTML=(JSON.parse(localStorage.getItem('lastscore'))).LHS;
+            }
+
+            if (chance===10){
+                alert("GAME OVER !\nYOUR SCORE :"+score);
+                document.getElementById("SCO").innerHTML=score=0;
+
+            }
+                                                    
+        }
+    </script>    
+    </body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+
+    <title>JOSN-JS-OBJECT</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(localStorage.getItem('cart'));
+    const cart={
+        numberOfItems :3,
+        prdt1 :'watch',
+        prdt2 :'notebook',
+        prdt3 :'laptop',
+        prdt4 :f()
+
+    }
+    localStorage.setItem('cart','full');
+    function f()
+    {
+        console.log("INSIDE F()")
+    }
+    let a =JSON.stringify(cart);
+    console.log('JSON =',a);
+    let b =JSON.parse(JSON.stringify(cart))
+    console.log('js-object=',b);
+</script>
+</html>
