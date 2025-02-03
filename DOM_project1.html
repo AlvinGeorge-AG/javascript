@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CONCEPT</title>
+    <style>
+        .b1{
+            color:blanchedalmond;
+            background-color: red;
+            align-items: center;
+            margin-left: 900px;
+            margin-top: 500px;
+            text-size-adjust: 500px;
+        }
+    </style>
+</head>
+<body>
+    <button class="b1" onclick="f1()">Subscribe</button>
+    <script>
+        function f1(){
+            if (document.querySelector('.b1').innerHTML==='Subscribe')
+            {
+            document.querySelector('.b1').innerHTML ="Subscribed <style>.b1{background-color:rgb(6, 111, 156);}</style>";
+            }else{
+                document.querySelector('.b1').innerHTML="Subscribe";
+            }
+
+        }
+    </script>
+</body>
+</html>

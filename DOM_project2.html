@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-PROJECT_2</title>
+</head>
+<body>
+    <p style="margin-top: 100px;margin-left: 100px;"><b>AMAZON RATE SHIPPING CALCULATOR</b></p>
+    <input placeholder="Enter the Rate" style="margin-top: 10px;margin-left: 100px;" class="inp"  onkeydown="if(event.key==='Enter'){f1();}">
+    <button onclick="f1()">CALCULATE</button>
+    <p style="margin-left: 100px;"><b>RATE = <span class="RATE">0</span></b></p>
+    <script>
+        function f1(){
+            let result=0;
+            let userRate = document.querySelector('input').value;
+            result =Number(userRate)+10;
+            document.querySelector('.RATE').innerHTML=result;
+            window.clearInterval
+
+
+
+
+        }
+    </script>
+</body>
+</html>
