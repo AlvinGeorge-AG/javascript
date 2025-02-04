@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+</head>
+<body>
+    <input id="rtx" placeholder="Add ToDo"><button onclick="f()">ADD</button>
+    <div id="div">
+
+    </div>
+    <script>
+        arraydata=[]
+        render();
+        function render()
+        {
+            let todo_str='';
+            for(let i=0;i<arraydata.length;i++){
+                    let html =`<p>
+                        ${arraydata[i]}
+                        <button onclick="
+                        arraydata.splice(${i},1);
+                        render()
+                        
+                        ">Delete</button>
+                        </p>`;
+                    todo_str+=html;}
+            document.getElementById('div').innerHTML=todo_str;
+
+        }
+
+        function f()
+            {
+            let Data = document.getElementById('rtx').value;
+            arraydata.push(Data);
+            document.getElementById('rtx').value='';
+            render();
+            }
+            
+    </script>
+</body>
+</html>

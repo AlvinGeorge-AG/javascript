@@ -6,12 +6,21 @@
     <title>DOM CONCEPT</title>
     <style>
         .b1{
-            color:blanchedalmond;
-            background-color: red;
+            color:rgb(0, 0, 0);
+            background-color: rgb(240, 240, 240);
             align-items: center;
             margin-left: 900px;
             margin-top: 500px;
-            text-size-adjust: 500px;
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            padding: 50px 100px;
+            
         }
     </style>
 </head>
@@ -21,7 +30,7 @@
         function f1(){
             if (document.querySelector('.b1').innerHTML==='Subscribe')
             {
-            document.querySelector('.b1').innerHTML ="Subscribed <style>.b1{background-color:rgb(6, 111, 156);}</style>";
+            document.querySelector('.b1').innerHTML ="Subscribed <style>.b1{background-color:rgb(0,0,0) ;color:rgb(255, 255, 255);}</style>";
             }else{
                 document.querySelector('.b1').innerHTML="Subscribe";
             }

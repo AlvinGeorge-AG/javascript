@@ -37,14 +37,16 @@
         let autogen;
         let chance=0; //how many times you played
         let score=0;  //variable to store score
-        const lasthighscore ={LHS:score}; //object to store last high score
-        console.log(localStorage.getItem('lastscore'));
-        document.getElementById('T').innerHTML=(JSON.parse(localStorage.getItem('lastscore'))).LHS;
+        let lasthighscore = {LHS: 0}; //object to store last high score
+        if (localStorage.getItem('lastscore')) {
+            lasthighscore = JSON.parse(localStorage.getItem('lastscore'));
+        }
+        document.getElementById('T').innerHTML = lasthighscore.LHS;
         //lasthighscore.LHS=score;
 
 
         function f1(user)  //main function
-        {   
+        {  
             chance++;                                                          
             //auto generates a choice 
             const random = Math.random();
@@ -90,14 +92,14 @@
                     score++;
                 }else{
                     alert("SICCERS(user) with SICCERS(autogen) : DRAW");
-                }
-            }  
-            localStorage.setItem('lastscore',JSON.stringify(lasthighscore));
-            document.getElementById("SCO").innerHTML=score; //display score on screen
-            if (score>lasthighscore.LHS)
-            {   
-                lasthighscore.LHS=score;
-                document.getElementById('T').innerHTML=(JSON.parse(localStorage.getItem('lastscore'))).LHS;
+            document.getElementById("SCO").innerHTML = score; //display score on screen
+            if (score > lasthighscore.LHS) {   
+                lasthighscore.LHS = score;
+                localStorage.setItem('lastscore', JSON.stringify(lasthighscore));
+                document.getElementById('T').innerHTML = lasthighscore.LHS;
+            }
+                localStorage.setItem('lastscore', JSON.stringify(lasthighscore));
+                document.getElementById('T').innerHTML=lasthighscore.LHS;
             }
 
             if (chance===10){
@@ -106,6 +108,7 @@
 
             }
                                                     
+            }
         }
     </script>    
     </body>
