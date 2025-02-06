@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced function</title>
+</head>
+<body>
+    <p>Random number generator !</p><br>
+    <button id='geen' onclick="f1()">GENERATE</button>  <button id="stop" onclick="stop()">STOP GENERATING</button>
+    <div id="qw2"></div>
+    <script>
+        let a;
+        function f1(){
+             a=setInterval(f,1000);
+             document.getElementById('geen').innerHTML="GENERATING";
+        }
+        function f(){
+            const randnum=Math.floor(Math.random()*100)+1;
+            console.log(randnum);
+            let html = `<p>${randnum}</p>`;
+            document.getElementById('qw2').innerHTML+=html;
+        }
+        function stop(){
+            clearInterval(a);
+            document.getElementById('geen').innerHTML="GENERATE";
+        }
+    </script>
+</body>
+</html>
